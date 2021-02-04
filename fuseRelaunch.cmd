@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilterTestBench_isim_beh.exe" -prj "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilterTestBench_beh.prj" "work.GaussianFilterTestBench" 

@@ -1,0 +1,609 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: GaussianFilter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "GaussianFilter.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "GaussianFilter"
+Output Format                      : NGC
+Target Device                      : xc3s400-4-pq208
+
+---- Source Options
+Top Module Name                    : GaussianFilter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilter.vhd" in Library work.
+Entity <gaussianfilter> compiled.
+Entity <gaussianfilter> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <GaussianFilter> in library <work> (architecture <behavioral>).
+WARNING:Xst:2094 - "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilter.vhd" line 72: Default value is ignored for signal <base>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <GaussianFilter> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2094 - "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilter.vhd" line 72: Default value is ignored for signal <base>.
+Entity <GaussianFilter> analyzed. Unit <GaussianFilter> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <GaussianFilter>.
+    Related source file is "E:/Uni/term7/FPGA/Project/FPGA_FINAL_PROJECT/GaussianFilter.vhd".
+WARNING:Xst:646 - Signal <temp<3:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <ram<0:766>> is used but never assigned. Tied to default value.
+WARNING:Xst:1780 - Signal <ram<767:16383>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <kernel> is used but never assigned. Tied to default value.
+WARNING:Xst:653 - Signal <img_width> is used but never assigned. This sourceless signal will be automatically connected to value 10000000.
+WARNING:Xst:1780 - Signal <img_height> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 510x8-bit ROM for signal <ram$mux0000> created at line 82.
+    Found 511x8-bit ROM for signal <ram$mux0001> created at line 83.
+    Found 512x8-bit ROM for signal <ram$mux0002> created at line 84.
+    Found 511x8-bit ROM for signal <ram$mux0004> created at line 87.
+    Found 765x8-bit ROM for signal <ram$mux0006> created at line 90.
+    Found 766x8-bit ROM for signal <ram$mux0007> created at line 91.
+    Found 8-bit adder carry out for signal <add0000$addsub0000> created at line 90.
+    Found 8-bit up accumulator for signal <base>.
+    Found 9-bit subtractor for signal <base$addsub0000> created at line 97.
+    Found 9-bit comparator greatequal for signal <base$cmp_ge0000> created at line 97.
+    Found 8-bit up counter for signal <i>.
+    Found 16-bit register for signal <m1>.
+    Found 16-bit register for signal <m2>.
+    Found 16-bit register for signal <m3>.
+    Found 16-bit register for signal <m4>.
+    Found 16-bit register for signal <m5>.
+    Found 16-bit register for signal <m6>.
+    Found 16-bit register for signal <m7>.
+    Found 16-bit register for signal <m8>.
+    Found 16-bit register for signal <m9>.
+    Found 10-bit subtractor for signal <ram$addsub0000> created at line 82.
+    Found 10-bit subtractor for signal <ram$addsub0005> created at line 90.
+    Found 8-bit adder carry out for signal <ram$addsub0009> created at line 86.
+    Found 10-bit adder carry out for signal <ram$addsub0010> created at line 82.
+    Found 9-bit adder carry out for signal <ram$addsub0011> created at line 83.
+    Found 10-bit adder carry out for signal <ram$addsub0012> created at line 84.
+    Found 8-bit adder carry out for signal <ram$addsub0013> created at line 88.
+    Found 10-bit adder carry out for signal <ram$addsub0014> created at line 90.
+    Found 9-bit adder carry out for signal <ram$addsub0015> created at line 91.
+    Found 9-bit adder carry out for signal <ram$addsub0016> created at line 92.
+    Found 9-bit subtractor for signal <sub0000$sub0000> created at line 82.
+    Found 16-bit register for signal <temp>.
+    Found 16-bit adder for signal <temp$add0000> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0000> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0001> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0002> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0003> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0004> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0005> created at line 94.
+    Found 16-bit adder for signal <temp$addsub0006> created at line 94.
+    Summary:
+	inferred   6 ROM(s).
+	inferred   1 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred 160 D-type flip-flop(s).
+	inferred  21 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <GaussianFilter> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 6
+ 510x8-bit ROM                                         : 1
+ 511x8-bit ROM                                         : 2
+ 512x8-bit ROM                                         : 1
+ 765x8-bit ROM                                         : 1
+ 766x8-bit ROM                                         : 1
+# Adders/Subtractors                                   : 21
+ 10-bit adder carry out                                : 3
+ 10-bit subtractor                                     : 2
+ 16-bit adder                                          : 8
+ 8-bit adder carry out                                 : 3
+ 9-bit adder carry out                                 : 3
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 8-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 8-bit up accumulator                                  : 1
+# Registers                                            : 10
+ 16-bit register                                       : 10
+# Comparators                                          : 1
+ 9-bit comparator greatequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1293 - FF/Latch <m8_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_1> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <temp_0> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_1> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_2> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_3> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_0> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_1> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_2> of sequential type is unconnected in block <GaussianFilter>.
+WARNING:Xst:2677 - Node <temp_3> of sequential type is unconnected in block <GaussianFilter>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 6
+ 510x8-bit ROM                                         : 1
+ 511x8-bit ROM                                         : 2
+ 512x8-bit ROM                                         : 1
+ 765x8-bit ROM                                         : 1
+ 766x8-bit ROM                                         : 1
+# Adders/Subtractors                                   : 21
+ 10-bit adder carry out                                : 3
+ 10-bit subtractor                                     : 2
+ 16-bit adder                                          : 8
+ 8-bit adder carry out                                 : 3
+ 9-bit adder carry out                                 : 3
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 8-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 8-bit up accumulator                                  : 1
+# Registers                                            : 156
+ Flip-Flops                                            : 156
+# Comparators                                          : 1
+ 9-bit comparator greatequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <m8_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m2_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m7_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m1_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m8_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m6_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m4_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_9> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m3_8> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_1> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m5_0> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_13> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_12> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_11> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <m9_10> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <temp_14> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <temp_15> has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_0> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_1> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_2> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_3> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_4> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_5> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <base_6> (without init value) has a constant value of 0 in block <GaussianFilter>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <GaussianFilter> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block GaussianFilter, actual ratio is 60.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 91
+ Flip-Flops                                            : 91
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : GaussianFilter.ngr
+Top Level Output File Name         : GaussianFilter
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 5004
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 59
+#      LUT2                        : 76
+#      LUT2_D                      : 17
+#      LUT2_L                      : 5
+#      LUT3                        : 648
+#      LUT3_D                      : 77
+#      LUT3_L                      : 31
+#      LUT4                        : 2448
+#      LUT4_D                      : 9
+#      LUT4_L                      : 130
+#      MULT_AND                    : 1
+#      MUXCY                       : 103
+#      MUXF5                       : 835
+#      MUXF6                       : 261
+#      MUXF7                       : 118
+#      MUXF8                       : 56
+#      VCC                         : 1
+#      XORCY                       : 118
+# FlipFlops/Latches                : 91
+#      FD                          : 77
+#      FDE                         : 1
+#      FDR                         : 11
+#      FDS                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400pq208-4 
+
+ Number of Slices:                     1854  out of   3584    51%  
+ Number of Slice Flip Flops:             91  out of   7168     1%  
+ Number of 4 input LUTs:               3510  out of   7168    48%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    141    12%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 91    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 16.612ns (Maximum Frequency: 60.198MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 7.165ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 16.612ns (frequency: 60.198MHz)
+  Total number of paths / destination ports: 348210 / 101
+-------------------------------------------------------------------------
+Delay:               16.612ns (Levels of Logic = 13)
+  Source:            i_0 (FF)
+  Destination:       m9_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: i_0 to m9_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             16   0.720   1.576  i_0 (i_0)
+     LUT1:I0->O            1   0.551   0.000  Madd_ram_addsub0016_cy<0>_rt (Madd_ram_addsub0016_cy<0>_rt)
+     MUXCY:S->O            1   0.500   0.000  Madd_ram_addsub0016_cy<0> (Madd_ram_addsub0016_cy<0>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_ram_addsub0016_cy<1> (Madd_ram_addsub0016_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_ram_addsub0016_cy<2> (Madd_ram_addsub0016_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_ram_addsub0016_cy<3> (Madd_ram_addsub0016_cy<3>)
+     XORCY:CI->O         324   0.904   3.721  Madd_ram_addsub0016_xor<4> (ram_addsub0016<4>)
+     LUT3:I1->O            3   0.551   0.933  ram_mux0008<1>111 (ram_mux0008<1>_bdd27)
+     LUT4:I3->O            1   0.551   0.996  ram_mux0008<4>12074 (ram_mux0008<4>12074)
+     LUT2:I1->O            1   0.551   0.000  ram_mux0008<4>12172_F (N303)
+     MUXF5:I0->O           1   0.360   0.827  ram_mux0008<4>12172 (ram_mux0008<4>12172)
+     LUT4:I3->O            1   0.551   0.996  ram_mux0008<4>12201 (ram_mux0008<4>12201)
+     LUT4:I1->O            1   0.551   0.827  ram_mux0008<4>12671 (ram_mux0008<4>12671)
+     LUT4:I3->O            1   0.551   0.000  ram_mux0008<4>12702 (ram_mux0008<4>)
+     FD:D                      0.203          m9_4
+    ----------------------------------------
+    Total                     16.612ns (6.736ns logic, 9.876ns route)
+                                       (40.5% logic, 59.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            temp_13 (FF)
+  Destination:       pixel_out<9> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: temp_13 to pixel_out<9>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.720   0.801  temp_13 (temp_13)
+     OBUF:I->O                 5.644          pixel_out_9_OBUF (pixel_out<9>)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 122.00 secs
+Total CPU time to Xst completion: 121.98 secs
+ 
+--> 
+
+Total memory usage is 4640100 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  169 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
